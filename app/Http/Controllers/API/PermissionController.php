@@ -5,13 +5,11 @@ namespace App\Http\Controllers\API;
 
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\User;
-use Illuminate\Support\Facades\Auth;
+use App\Entities\User;
 use Validator;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-class PermissionController extends Controller {
+class PermissionController extends BaseController {
     public $successStatus = 200;
     public function __construct(){
         $this->middleware(['isAdmin']);

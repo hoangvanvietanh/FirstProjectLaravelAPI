@@ -21,8 +21,8 @@ Route::post('register', 'API\RegisterController@register');
 Route::post('login', 'API\RegisterController@login');
 
 Route::middleware('auth:api')->group( function () {
-    Route::get('users', 'API\UserController@user_login');
-    Route::get('posts', 'PostsController@list_posts');
+    Route::get('users', 'API\UsersController@user_login');
+    Route::get('posts', 'API\PostsController@list_posts');
     Route::get('roles', 'API\PermissionController@role_list');
     Route::post('roles', 'API\PermissionController@role_store');
     Route::get('permissions', 'API\PermissionController@permission_list');
@@ -30,7 +30,6 @@ Route::middleware('auth:api')->group( function () {
     Route::post('rolepermissions/{role}', 'API\PermissionController@role_has_permissions');
     Route::post('assignuserrole/{role}', 'API\PermissionController@assign_user_to_role');
 });
-//Route::resource('posts', 'API\PostController');
 
 Route::fallback(function(){
     return response()->json(['message' => 'Not Found.'], 404);

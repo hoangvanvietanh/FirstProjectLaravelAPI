@@ -1,42 +1,37 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use Illuminate\Support\Facades\Auth;
+namespace App\Http\Controllers\API;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\PostCreateRequest;
-use App\Http\Requests\PostUpdateRequest;
-use App\Repositories\PostRepository;
-use App\Validators\PostValidator;
+use App\Http\Requests\ImageCreateRequest;
+use App\Http\Requests\ImageUpdateRequest;
+use App\Repositories\ImageRepository;
+use App\Validators\ImageValidator;
 
 /**
- * Class PostsController.
+ * Class ImagesController.
  *
  * @package namespace App\Http\Controllers;
  */
-class PostsController extends Controller
+class ImagesController extends BaseController
 {
     /**
-     * @var PostRepository
+     * @var ImageRepository
      */
     protected $repository;
 
     /**
-     * @var PostValidator
+     * @var ImageValidator
      */
     protected $validator;
 
     /**
-     * PostsController constructor.
+     * ImagesController constructor.
      *
-     * @param PostRepository $repository
-     * @param PostValidator $validator
+     * @param ImageRepository $repository
+     * @param ImageValidator $validator
      */
-    public function __construct(PostRepository $repository, PostValidator $validator)
+    public function __construct(ImageRepository $repository, ImageValidator $validator)
     {
         $this->repository = $repository;
         $this->validator  = $validator;
@@ -50,44 +45,38 @@ class PostsController extends Controller
     public function index()
     {
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $posts = $this->repository->all();
+        $images = $this->repository->all();
 
         if (request()->wantsJson()) {
 
             return response()->json([
-                'data' => $posts,
+                'data' => $images,
             ]);
         }
 
-        return view('posts.index', compact('posts'));
-    }
-
-    public function list_posts(){
-        $posts = $this->repository->findByField('user_id',\auth()->id());
-        return response()->json(['list_post'=>$posts],200);
-
+        return view('images.index', compact('images'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  PostCreateRequest $request
+     * @param  ImageCreateRequest $request
      *
      * @return \Illuminate\Http\Response
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function store(PostCreateRequest $request)
+    public function store(ImageCreateRequest $request)
     {
         try {
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
 
-            $post = $this->repository->create($request->all());
+            $image = $this->repository->create($request->all());
 
             $response = [
-                'message' => 'Post created.',
-                'data'    => $post->toArray(),
+                'message' => 'Image created.',
+                'data'    => $image->toArray(),
             ];
 
             if ($request->wantsJson()) {
@@ -117,16 +106,16 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = $this->repository->find($id);
+        $image = $this->repository->find($id);
 
         if (request()->wantsJson()) {
 
             return response()->json([
-                'data' => $post,
+                'data' => $image,
             ]);
         }
 
-        return view('posts.show', compact('post'));
+        return view('images.show', compact('image'));
     }
 
     /**
@@ -138,52 +127,61 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        $post = $this->repository->find($id);
+        $image = $this->repository->find($id);
 
-        return view('posts.edit', compact('post'));
+        return view('images.edit', compact('image'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  PostUpdateRequest $request
+     * @param  ImageUpdateRequest $request
      * @param  string            $id
      *
      * @return Response
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(PostUpdateRequest $request, $id)
+    public function update(ImageUpdateRequest $request, $id)
     {
-        try {
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
+        $image = Input::file('file'); //i think you call your input on the html form as 'file'
+        $img = Image::make($image)->resize(320, 240, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+        $imgName = rand(11111, 99999).'.'.$image->getClientOriginalExtension();
+        $this->repository->uploadImage($img, $imgName);
 
-            $post = $this->repository->update($request->all(), $id);
-
-            $response = [
-                'message' => 'Post updated.',
-                'data'    => $post->toArray(),
-            ];
-
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-
-            if ($request->wantsJson()) {
-
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
-        }
+        //Continue your logic here
+//        try {
+//
+//            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
+//
+//            $image = $this->repository->update($request->all(), $id);
+//
+//            $response = [
+//                'message' => 'Image updated.',
+//                'data'    => $image->toArray(),
+//            ];
+//
+//            if ($request->wantsJson()) {
+//
+//                return response()->json($response);
+//            }
+//
+//            return redirect()->back()->with('message', $response['message']);
+//        } catch (ValidatorException $e) {
+//
+//            if ($request->wantsJson()) {
+//
+//                return response()->json([
+//                    'error'   => true,
+//                    'message' => $e->getMessageBag()
+//                ]);
+//            }
+//
+//            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+//        }
     }
 
 
@@ -201,11 +199,12 @@ class PostsController extends Controller
         if (request()->wantsJson()) {
 
             return response()->json([
-                'message' => 'Post deleted.',
+                'message' => 'Image deleted.',
                 'deleted' => $deleted,
             ]);
         }
 
-        return redirect()->back()->with('message', 'Post deleted.');
+        return redirect()->back()->with('message', 'Image deleted.');
     }
+
 }
