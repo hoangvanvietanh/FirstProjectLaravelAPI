@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9369fdd4-ae08-4745-9ed3-2307ad7d0d74" name="Default Changelist" comment="" />
+    <list default="true" id="9369fdd4-ae08-4745-9ed3-2307ad7d0d74" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rnd" beforeDir="false" afterPath="$PROJECT_DIR$/.rnd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +17,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -142,6 +152,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Lampart\FirstProjectLaravelAPI" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -159,6 +175,10 @@
       <updated>1598501457618</updated>
       <workItem from="1598501462187" duration="17728000" />
       <workItem from="1598573655411" duration="5029000" />
+      <workItem from="1598631394436" duration="207000" />
+      <workItem from="1598631621971" duration="619000" />
+      <workItem from="1598632252301" duration="1772000" />
+      <workItem from="1598653212090" duration="8795000" />
     </task>
     <servers />
   </component>
@@ -166,22 +186,30 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1598501600459">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state x="450" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598673212247">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="450" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1598673212247" />
+    <state width="1340" height="206" key="GridCell.Tab.0.bottom" timestamp="1598631602608">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1598501600459" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1598501600459">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state width="1340" height="206" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1598631602608" />
+    <state width="1340" height="206" key="GridCell.Tab.0.center" timestamp="1598631602608">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1598501600459" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1598501600458">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state width="1340" height="206" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1598631602608" />
+    <state width="1340" height="206" key="GridCell.Tab.0.left" timestamp="1598631602608">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1598501600458" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1598501600459">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state width="1340" height="206" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1598631602608" />
+    <state width="1340" height="206" key="GridCell.Tab.0.right" timestamp="1598631602608">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1598501600459" />
+    <state width="1340" height="206" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1598631602608" />
     <state x="2114" y="243" key="NewPhpClassDialog" timestamp="1598503248206">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>

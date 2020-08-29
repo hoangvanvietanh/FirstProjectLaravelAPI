@@ -21,7 +21,7 @@ Route::post('register', 'API\RegisterController@register');
 Route::post('login', 'API\RegisterController@login');
 
 Route::middleware('auth:api')->group( function () {
-    Route::resource('users', 'API\UserController');
+    Route::get('users', 'API\UserController@user_login');
     Route::get('posts', 'PostsController@list_posts');
     Route::get('roles', 'API\PermissionController@role_list');
     Route::post('roles', 'API\PermissionController@role_store');

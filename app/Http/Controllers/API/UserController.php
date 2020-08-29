@@ -7,6 +7,8 @@ namespace App\Http\Controllers\API;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 class UserController extends Controller
 {
     public $successStatus = 200;
@@ -58,5 +60,16 @@ class UserController extends Controller
     public function show(User $user)
     {
         return response()->json(['user'=>$user], $this-> successStatus);
+    }
+
+    public function user_login(){
+
+        return response()->json(['user'=>$user = Auth::user()],200);
+    }
+
+    public function checkUsernameEmailUserRegister(){
+        $users = User::all();
+
+        return response()->json(['user'=>$user = Auth::user()],200);
     }
 }
