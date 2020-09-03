@@ -22,7 +22,10 @@ Route::post('login', 'API\RegisterController@login');
 
 Route::middleware('auth:api')->group( function () {
     Route::get('users', 'API\UsersController@user_login');
+    Route::post('userupdate/{id}', 'API\UsersController@update');
     Route::get('posts', 'API\PostsController@list_posts');
+    Route::post('createpost', 'API\PostsController@store');
+    Route::delete('deletepost/{id}', 'API\PostsController@destroy');
     Route::get('roles', 'API\PermissionController@role_list');
     Route::post('roles', 'API\PermissionController@role_store');
     Route::get('permissions', 'API\PermissionController@permission_list');

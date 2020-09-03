@@ -31,7 +31,7 @@ class User extends Model implements Transformable, AuthorizableContract, Authent
      * @var array
      */
     protected $fillable = [
-        'name','username','email', 'password'
+        'id','name','username','email', 'password','gender','address','phone_number','department','birth_day','birth_place'
     ];
 
     /**
@@ -51,6 +51,46 @@ class User extends Model implements Transformable, AuthorizableContract, Authent
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /**
+     * @var mixed
+     */
+    private $updated_at;
+    /**
+     * @var mixed
+     */
+    private $created_at;
+    /**
+     * @var mixed
+     */
+    private $birth_place;
+    /**
+     * @var mixed
+     */
+    private $birth_day;
+    /**
+     * @var mixed
+     */
+    private $department;
+    /**
+     * @var mixed
+     */
+    private $phone_number;
+    /**
+     * @var mixed
+     */
+    private $address;
+    /**
+     * @var mixed
+     */
+    private $gender;
+    /**
+     * @var mixed
+     */
+    private $name;
+    /**
+     * @var mixed
+     */
+    private $id;
 
     public function posts(){
         return $this->hasMany('App\Entities\Post', 'user_id', 'id');

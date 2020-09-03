@@ -151,7 +151,7 @@ class UsersController extends BaseController
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
             $user = $this->repository->update($request->all(), $id);
-
+            //dd($request);
             $response = [
                 'message' => 'User updated.',
                 'data'    => $user->toArray(),

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\API;
+use Illuminate\Support\Facades\Auth;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\PostCreateRequest;
@@ -58,7 +59,7 @@ class PostsController extends BaseController
     }
 
     public function list_posts(){
-        $posts = $this->repository->findByField('user_id',\auth()->id());
+        $posts = $this->repository->findByField('user_id',Auth::user()->id);
         return response()->json(['list_post'=>$posts],200);
 
     }

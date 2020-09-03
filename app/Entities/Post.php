@@ -3,8 +3,11 @@
 namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
+use Spatie\Permission\Traits\HasRoles;
 
 /**
  * Class Post.
@@ -13,7 +16,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  */
 class Post extends Model implements Transformable
 {
-    use TransformableTrait;
+    use TransformableTrait,HasApiTokens,Notifiable,HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +24,7 @@ class Post extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        'title','content','user_id','id'
+        'title','content','user_id','id','url_image','status'
     ];
 
 }

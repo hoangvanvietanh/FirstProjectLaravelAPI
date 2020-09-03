@@ -25,7 +25,13 @@ class UserTransformer extends TransformerAbstract
             'id'         => (int) $model->id,
 
             /* place your other model properties here */
-
+            'name'=>$model->name,
+            'gender'=>$model->gender,
+            'address'=>$model->address,
+            'phone_number'=>$model->phone_number,
+            'department'=>$model->department,
+            'birth_day'=>$model->birth_day,
+            'birth_place'=>$model->birth_place,
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
         ];
