@@ -106,7 +106,7 @@ class PermissionController extends BaseController {
         if($validator->fails()){
             return response()->json(['error' => $validator->errors()], 401);
         }
-        $user = User:: find($request['user_id'])->firstOrFail();
+        $user = User:: find($request['username'])->firstOrFail();
         if($user->assignRole($role)){
             return response()->json(['success' => $user], $this-> successStatus);
         }

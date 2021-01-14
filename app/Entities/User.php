@@ -93,7 +93,7 @@ class User extends Model implements Transformable, AuthorizableContract, Authent
     private $id;
 
     public function posts(){
-        return $this->hasMany('App\Entities\Post', 'user_id', 'id');
+        return $this->hasMany('App\Entities\Post', 'username', 'username');
     }
 
 }

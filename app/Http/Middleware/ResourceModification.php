@@ -17,7 +17,7 @@ class ResourceModification
         $param = $request->route()->parameters();
 
         $loggedin_user = Auth::user();
-        if(!$loggedin_user->hasRole('Admin') && $loggedin_user->id != $param['post']['user_id']){
+        if(!$loggedin_user->hasRole('Admin') && $loggedin_user->id != $param['post']['username']){
             return response()->json(['error'=>'Unauthorised'], 401);
         }
         return $next($request);

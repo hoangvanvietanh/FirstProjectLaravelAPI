@@ -24,7 +24,7 @@ class Post extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        'title','content','user_id','id','url_image','status'
+        'title','content','username','id','url_image','status'
     ];
 
 }

@@ -59,7 +59,7 @@ class PostsController extends BaseController
     }
 
     public function list_posts(){
-        $posts = $this->repository->findByField('user_id',Auth::user()->id);
+        $posts = $this->repository->findByField('username',Auth::user()->username);
         return response()->json(['list_post'=>$posts],200);
 
     }
