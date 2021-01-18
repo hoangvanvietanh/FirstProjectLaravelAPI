@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\API;
+use Google\Cloud\Core\Exception\GoogleException;
 use Illuminate\Support\Facades\Auth;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
@@ -8,7 +9,8 @@ use App\Http\Requests\PostCreateRequest;
 use App\Http\Requests\PostUpdateRequest;
 use App\Repositories\PostRepository;
 use App\Validators\PostValidator;
-
+use Google\Cloud\Firestore\FirestoreClient;
+use Kreait\Firebase\ServiceAccount;
 /**
  * Class PostsController.
  *
@@ -59,6 +61,25 @@ class PostsController extends BaseController
     }
 
     public function list_posts(){
+        $json = '';
+        try {
+            $firestore = new FirestoreClient([
+                    'keyFile' => json_decode(file_get_contents('APIfilekey.json'), true)
+            ]);
+
+            $collectionReference = $firestore->collection('users');
+            $documentReference = $collectionReference->document('lampart01');
+            //dd($documentReference);
+            $documentReference->update([
+               'notification'=> random_int(0,9999999)
+            ]);
+
+            $snapshot = $documentReference->snapshot();
+            dd($snapshot['notification']);
+        } catch (GoogleException | \Exception $e) {
+            dd($e);
+        }
+
         $posts = $this->repository->findByField('username',Auth::user()->username);
         return response()->json(['list_post'=>$posts],200);
 

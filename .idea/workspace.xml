@@ -20,18 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9369fdd4-ae08-4745-9ed3-2307ad7d0d74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/APIfilekey.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/hito-fake-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hito-fake-api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.rnd" beforeDir="false" afterPath="$PROJECT_DIR$/.rnd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/PermissionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/ResourceModification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/ResourceModification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_27_061441_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_27_061441_create_posts_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +168,29 @@
       <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/grpc/grpc" />
+      <path value="$PROJECT_DIR$/vendor/fig/http-message-util" />
+      <path value="$PROJECT_DIR$/vendor/giggsey/locale" />
+      <path value="$PROJECT_DIR$/vendor/giggsey/libphonenumber-for-php" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/rize/uri-template" />
+      <path value="$PROJECT_DIR$/vendor/google/grpc-gcp" />
+      <path value="$PROJECT_DIR$/vendor/google/protobuf" />
+      <path value="$PROJECT_DIR$/vendor/google/crc32" />
+      <path value="$PROJECT_DIR$/vendor/google/gax" />
+      <path value="$PROJECT_DIR$/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/vendor/morrislaptop/firestore-php" />
+      <path value="$PROJECT_DIR$/vendor/google/cloud-storage" />
+      <path value="$PROJECT_DIR$/vendor/google/common-protos" />
+      <path value="$PROJECT_DIR$/vendor/google/cloud-core" />
+      <path value="$PROJECT_DIR$/vendor/google/cloud-firestore" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/superbalist/flysystem-google-storage" />
+      <path value="$PROJECT_DIR$/vendor/kreait/firebase-tokens" />
+      <path value="$PROJECT_DIR$/vendor/kreait/firebase-php" />
+      <path value="$PROJECT_DIR$/vendor/kreait/gcp-metadata" />
+      <path value="$PROJECT_DIR$/vendor/kreait/clock" />
+      <path value="$PROJECT_DIR$/vendor/riverline/multipart-parser" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gfMycFdR7io1M43XJddhWomJ2u" />
@@ -193,11 +211,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Lampart\FirstProjectLaravelAPI\app\Http\Controllers\API" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Lampart\FirstProjectLaravelAPI" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\viet_anh\Documents\Source Code\VietAnhProject\FirstProjectLaravelAPI\public" />
+      <recent name="C:\Users\viet_anh\Documents\Source Code\VietAnhProject\FirstProjectLaravelAPI\app\Http\Controllers" />
+      <recent name="C:\Users\viet_anh\Documents\Source Code\VietAnhProject\FirstProjectLaravelAPI\app\Http\Controllers\API" />
+      <recent name="E:\Lampart\FirstProjectLaravelAPI\app\Http\Controllers\API" />
     </key>
   </component>
   <component name="RunManager">
@@ -223,6 +244,12 @@
       <workItem from="1598714152957" duration="3110000" />
       <workItem from="1610584688725" duration="1948000" />
       <workItem from="1610616672114" duration="1834000" />
+      <workItem from="1610670769219" duration="4677000" />
+      <workItem from="1610705843885" duration="126000" />
+      <workItem from="1610929983754" duration="2866000" />
+      <workItem from="1610934079913" duration="597000" />
+      <workItem from="1610940409666" duration="3854000" />
+      <workItem from="1610958762965" duration="4536000" />
     </task>
     <servers />
   </component>
